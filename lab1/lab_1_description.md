@@ -47,8 +47,8 @@ RTL Analysis -> Open Elaborated Design
 # Simulation
 1. `Run simulation` -> `Run behavioral simulation`
 2. Use the tcl (the command line) commands or UI (user interface) buttons to run the simulation. tcl commands are listed below to run the simulation
-3. When launching the simulation, all the signals will be in high impedence state or `Z` and output will be `X`
-4. To start the simulation from 0 timestep, type in `restart` in tcl
+3. When launching the simulation, all the signals will be in a high impedence state or `Z` and outputs will be `X`
+4. To start the simulation from 0 timestep, type in `restart` in tcl or use the circle arrow icon (looks like a reload page icon) in the top menu on the far right.
 5. Force a constant value on an input line (signal)
 
     1) Select the signal -> right click -> force constant -> force value -> 1
@@ -60,7 +60,7 @@ RTL Analysis -> Open Elaborated Design
     2) tcl console -> add_force *input name* {value timestep}
         
        ``` verilog 
-        add_force A {1 0ns} 
+        add_force {/and_gate/a} -radix hex {1 0ns} 
         ```
 6. Step into timestep to see the wave form (timing diagram) of the signal
    
@@ -98,17 +98,18 @@ RTL Analysis -> Open Elaborated Design
 You can also write a series of TCL commands in a text editor. Then, you can copy all TCL commands and paste them in the `tcl console`. That way you can make the simulation faster and in organized manner. Here is a tcl command to simulate the `OR gate`
 ```verilog
 // OR gate
-add_force a {1 0ns}
-add_force b {0 0ns}
+add_force {/and_gate/a} -radix hex {1 0ns}
+add_force {/and_gate/b} -radix hex {0 0ns}
 run 10ns
-add_force a {1 0ns}
-add_force b {1 0ns}
+add_force {/and_gate/a} -radix hex {1 0ns}
+add_force {/and_gate/b} -radix hex {1 0ns}
 run 10ns
-add_force a {0 0ns}
-add_force b {1 0ns}
+add_force {/and_gate/a} -radix hex {0 0ns}
+add_force {/and_gate/b} -radix hex {1 0ns}
 run 10ns
-add_force a {0 0ns}
-add_force b {0 0ns}
+add_force {/and_gate/a} -radix hex {0 0ns}
+add_force {/and_gate/b} -radix hex {0 0ns}
 run 10ns
+
 
 ```
