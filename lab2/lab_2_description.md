@@ -20,30 +20,32 @@ Side note (Spring 2024): The part you chose in lab01 was not the correct part - 
 5. In the future you can specify parameters to your Module here, but for now lets make sure 
    to learn the whole structure of a Verilog program so you can write it yourself. Just click OK.
 6. Click Yes.
-7. Now you will notice in the Sources Window under Design Sources that the board_demo file has been created.
+7. Now you will notice in the Sources Window under Design Sources that the board_demo_top file has been created.
 8. Double click on the file and it will open a window on the right side.
 9. Fill in the team member names under Engineer. As well as the other pertinent information.
     
-Create an initial  gate by typing in the Verilog below. Note that this module is not really necessary, but this is a learning experience. The and gate specification within the verilog module, and(out, a, b), is and example of structural verilog.
-
-<!--    ## Format -->
- <!--    *gate*(*output*, *input1*, *input2*) -->
+Create an initial design by typing in the Verilog below. Note that this module is taking inputs from outside of the fpga. We will learn more about the signals specified today. For now, make sure your spelling and capitalization is exact. Note: this is still structural verilog.
 
 ```verilog
-//Example AND gate
-module and_gate(
-    input a, 
-    input b, 
-    output out
+// Testing the board LEDS and set up
+module board_demo_top(
+    input [1:0] SWITCHES, 
+    output [3:0] LEDS
 );
-and(out, a, b);
+    and(LEDS[0], SWITCHES[0], SWITCHES[1]);
+
 endmodule
 ```
 
 # Viewing the schematic
 RTL Analysis -> Open Elaborated Design 
 
-![And gate](and_gate_logic.png)
+Make sure that your schematic makes sense. 
+
+# Continue creating design
+Use the and gate as an example and add an or, xor, and not gate each with the same inputs, but the output should be increasing LEDS. Since the not gate has only one input, use the SWITCHES[0] only.
+
+Again check your schematic.
     
 # Simulation
 1. `Run simulation` -> `Run behavioral simulation`
@@ -59,10 +61,8 @@ RTL Analysis -> Open Elaborated Design
    ![right click](rightclick_input_constant.png)
 
     2) tcl console -> add_force *input name* {value timestep}
-        
-       ``` verilog 
-        add_force {/and_gate/a} -radix hex {1 0ns} 
-        ```
+
+Note that to see all of the lines individually, you may need to expand the SWITCHES and LEDS in the waveform window and in the signal window.
        To type into the command line, you will need to type into the dialog box underneath the Tcl Conslol Window.
 6. Step into timestep to see the wave form (timing diagram) of the signal
    
@@ -83,30 +83,6 @@ RTL Analysis -> Open Elaborated Design
    1) Use the magnifying glass in the User Interface, the three icons to the right of the disk icon in the waveform window.
    2) Apparently zooming in and out is no longer supported on the command line
 
-9. See below for a set of commands to test an 'OR' gate, a similar set of tcl commands can be used to test an 'AND' gate.
-    
-10. Once you have a timing diagram of all possible input and output combinations of an AND gate, ask the TA or instructor to view your diagram. They will ask you a few "check-off" questions. 
-11. Take a screen shot of the circuit and the timing diagram for your lab report. You will submit a lab report to Canvas as a pdf. For today's lab that will simply be a header with Lab 01 - Gates, on the top right hand side should be the names of the lab partners. Then you should insert your screen shots of the circuit and timing diagram.
-12. A lab report with only the AND gate screen shots will be 70%. Try to also simulate OR, XOR and NOT and take circuit and timing diagram screen shots. Each of these will be worth 10%.
-13. Implement each of the additional gates in its own module. To simulate a different module make sure to make it the "Top" by right clicking on the filename under Design Sources and then choosing 'Set as Top'. Then do the same thing with the corresponding file under simulation. Future simulations will now use the new file.
+Note that you can "test" all of the outputs at once as these gates are set up in parallel. Once you are convinced you have everything working correctly, move on to the next section.
 
-# Automated simulation scripts (TCL commands)
-
-You can also write a series of TCL commands in a text editor. Then, you can copy all TCL commands and paste them in the `tcl console`. That way you can make the simulation faster and in organized manner. Here is a tcl command to simulate the `OR gate`
-```verilog
-// OR gate
-add_force {/and_gate/a} -radix hex {1 0ns}
-add_force {/and_gate/b} -radix hex {0 0ns}
-run 10ns
-add_force {/and_gate/a} -radix hex {1 0ns}
-add_force {/and_gate/b} -radix hex {1 0ns}
-run 10ns
-add_force {/and_gate/a} -radix hex {0 0ns}
-add_force {/and_gate/b} -radix hex {1 0ns}
-run 10ns
-add_force {/and_gate/a} -radix hex {0 0ns}
-add_force {/and_gate/b} -radix hex {0 0ns}
-run 10ns
-
-
-```
+# Setting up a constraints file
