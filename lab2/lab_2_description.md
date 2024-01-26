@@ -68,7 +68,7 @@ Note that to see all of the lines individually, you may need to expand the SWITC
    
    1) The play button with a subscript "T" adds the additional runtime specified in the box immediately to its right. Specify the time to step to next wave
    2) type into tcl console
-    ```verilog
+    ```
         run 10ns
     ```
 
