@@ -1,5 +1,3 @@
-# Download relevant files - verilog (.v) and constraints (.xdc)
-See 
 # Project creation
 Start the project
 1. Use the Windows key to bring up the search bar for Vivado.
@@ -13,18 +11,20 @@ Start the project
 9. Select the `Board` tab. Under `Family` find PYNQ-Z1. Select PYNQ-Z1 in table below.
 10. Choose Finish.
 
+Side note (Spring 2024): The part you chose in lab01 was not the correct part - in fact you may have ended up with some package pin not found style errors. Choosing the Board tab and PYNQ-Z1 should eliminate any of those errors.
+
 # Editing file
 1. In the middle Sources window choose the plus tab.
 2. Choose add or create design sources. Click Next.
-4. Create new file by choosing the plus tab again, -> Create File. Name it `and_gate'. Click Finish
+4. Create new file by choosing the plus tab again, -> Create File. Name it `board_demo'. Click Finish
 5. In the future you can specify parameters to your Module here, but for now lets make sure 
    to learn the whole structure of a Verilog program so you can write it yourself. Just click OK.
 6. Click Yes.
-7. Now you will notice in the Sources Window under Design Sources that the and_gate file has been created.
+7. Now you will notice in the Sources Window under Design Sources that the board_demo file has been created.
 8. Double click on the file and it will open a window on the right side.
 9. Fill in the team member names under Engineer. As well as the other pertinent information.
     
-Create the `AND`  gate by typing in the Verilog below. Note that this module is not really necessary, but this is a learning experience. The and gate specification within the verilog module, and(out, a, b), is and example of structural verilog.
+Create an initial  gate by typing in the Verilog below. Note that this module is not really necessary, but this is a learning experience. The and gate specification within the verilog module, and(out, a, b), is and example of structural verilog.
 
 <!--    ## Format -->
  <!--    *gate*(*output*, *input1*, *input2*) -->
