@@ -86,3 +86,6 @@ Note that to see all of the lines individually, you may need to expand the SWITC
 Note that you can "test" all of the outputs at once as these gates are set up in parallel. Once you are convinced you have everything working correctly, move on to the next section.
 
 # Setting up a constraints file
+
+Download the constraints file at https://github.com/cs456s24/cs456s24/tree/main/lab2 
+
