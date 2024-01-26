@@ -56,9 +56,9 @@ Again check your schematic.
 
     1) Select the signal -> right click -> force constant -> force value -> 1
    
-   ![force constant](rightclick_force_constant.png)
+   ![force constant](../lab1/rightclick_force_constant.png)
 
-   ![right click](rightclick_input_constant.png)
+   ![right click](../lab1/rightclick_input_constant.png)
 
     2) tcl console -> add_force *input name* {value timestep}
 
