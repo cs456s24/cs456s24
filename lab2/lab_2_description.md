@@ -8,7 +8,7 @@ Start the project
 6. Default is rtl project, which is what you want so just click Next.
 7. Don't create a new file yet, just click Next.
 8. No constraint file yet, so just click Next again.
-9. Select the `Board` tab. Under `Family` find PYNQ-Z1. Select PYNQ-Z1 in table below.
+9. Select the `Board` tab. Under `Name` find PYNQ-Z1. Select PYNQ-Z1 in table below.
 10. Choose Finish.
 
 Side note (Spring 2024): The part you chose in lab01 was not the correct part - in fact you may have ended up with some package pin not found style errors. Choosing the Board tab and PYNQ-Z1 should eliminate any of those errors.
