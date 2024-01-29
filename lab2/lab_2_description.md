@@ -46,7 +46,7 @@ Make sure that your schematic makes sense.
 # Continue creating design
 Use the and gate as an example and add an or, xor, and not gate each with the same inputs, but the output should be increasing LEDS. Since the not gate has only one input, use the SWITCHES[0] only.
 
-Again check your schematic.
+Again check your schematic. If you are having trouble getting your schematic to update, right-click on Open Elaborated Design and choose Reload.
     
 # Simulation
 1. `Run simulation` -> `Run behavioral simulation`
