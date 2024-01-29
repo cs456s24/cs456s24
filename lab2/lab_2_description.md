@@ -12,7 +12,7 @@ Start the project
 10. Select PYNQ-Z1 in table below. Make sure that the Part is xc7z020clg400-1 or it may cause problems later.
 11. Choose Finish.
 
-Side note (Spring 2024): The part you chose in lab01 was not the correct part - in fact you may have ended up with some package pin not found style errors. Choosing the Board tab and PYNQ-Z1 should eliminate any of those errors.
+Side note (Spring 2024): The part you chose in lab01 was not the correct part - in fact you may have ended up with some package pin not found style errors. Choosing the Board tab and PYNQ-Z1 should eliminate any of those errors. If later you find yourself with a missing package pin error, you probably did not select the correct part at the beginning. You should be able to change to the correct part by going to `Settings` under the Project Manager, then choosing `General` under Project Settings on the left. On the right under project device you can use the '...' to change the device.
 
 # Editing file
 1. In the middle Sources window choose the plus tab.
