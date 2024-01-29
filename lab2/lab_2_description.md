@@ -29,7 +29,7 @@ Create an initial design by typing in the Verilog below. Note that this module i
 
 ```verilog
 // Testing the board LEDS and set up
-module board_demo_top(
+module board_demo(
     input [1:0] SWITCHES, 
     output [3:0] LEDS
 );
