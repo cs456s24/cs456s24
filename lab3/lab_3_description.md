@@ -48,14 +48,16 @@ Start the project
 ## Understanding a testbench ##
 6. A testbench is a way to run a simulation without typing in tcl commands. Below is one designed to test all inputs of the `combo_eq` module you wrote above. Let's make sure you understand key aspects of the code below.
 
+
+
 ```verilog
+`timescale 1 ns/ 1 ns
 
 module combo_eq_tb;
     reg a;
     reg b;
     wire b_out, c_out, x_out;
-    
-       
+          
     localparam time_step = 5;
 
     combo_eq combo_eq_tb(.a_in(a),  .b_in(b), .x_out(x));
