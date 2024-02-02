@@ -3,9 +3,9 @@
 Note that your files should be named what we ask and you should always have your name and date in your verilog source files. This is the first step in "writing your own code" and helps me significantly as much of the grading I do is by hand. Having your name in the file makes it easier for me to get your grade into Canvas accurately (i.e. know whose code I am looking at so that when I click the rubric buttons I know I am in the right place.)
 
 # Submission Details
-Today's lab will be a pdf report again submitted to Canvas. Ideally you will submit 2 designs: a straight forward circuit from a boolean logic expression and a one-bit full adder. Today's lab will be graded as follows: 
-1. logic expression design (verilog, circuit screen capture, timing diagram screen capture): 7pts
-2. adder design(verilog, circuit screen capture, timing diagram screen capture): 3 pts
+Today's lab will be a pdf report again submitted to Canvas. You will submit 2 designs: a straight forward circuit from a boolean logic expression and a one-bit full adder. Today's lab will be graded as follows: 
+1. logic expression design (verilog for combo_eq, circuit screen capture, timing diagram screen capture): 6pts
+2. adder design(verilog for full_adder and full_adder_tb, circuit screen capture, timing diagram screen capture): 4 pts
 
 It is useful to finish these designs as they are a part of later projects and labs. It may be easier to turn in the verilog as a screen capture also to maintain the legibility and formatting.
 
@@ -67,7 +67,7 @@ Note the name of the module is the same as the CUT (Circuit Under Test) followed
 ### Setting signals
 Each assignment to a register within the initial block happens in the order given. Though "time" in the simulation does not pass until the `#` directive is used.
 
-**Note the lines before the initial begin are setting up the circuit. Those within the initial clause are for running the simulation**
+**Note the lines before the initial begin are setting up the circuit. Those within the initial clause are for running the simulation.**
 
 ```verilog
 `timescale 1 ns/ 1 ns
@@ -124,8 +124,31 @@ A one-bit full adder will take in 3 one-bit inputs: two 1-bit inputs representin
 2. Create the 'schematic' and verify it is the correct circuit. Recall `RTL analysis` -> `Open Elaborated Design`
 3. Edit your verilog if necessary.
 4. Once your verilog and circuit are correct get screen captures for your report.
-5. Using the procedures learned in a prior lab, force values to create a timing diagram that demonstrates the circuit is functioning correctly.
-6. Create a screen capture of the timing diagram for your lab report.
+5. Using the template for a testbench shown below, create a testbench for your full_adder and run a simulation to show the adder working for all possible inputs.
+   
+```verilog
+`timescale 1 ns/ 1 ns
+
+module full_adder_tb;
+    reg a;
+    reg b;
+    reg c_in;
+    wire sum;
+    wire c_out;
+          
+    localparam time_step = 5;
+
+    full_adder full_adder_tb(a, b, c_in, sum, c_out);
+    
+    initial
+        begin   
+// Enter your simulation here.
+           
+        end
+    
+endmodule
+```
+6. Run a simulation and create a screen capture of the timing diagram for your lab report.
 
 ____
 
