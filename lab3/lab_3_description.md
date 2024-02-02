@@ -46,7 +46,7 @@ Start the project
 5. In a prior lab, force values were used to create a timing diagram that demonstrates the circuit is functioning correctly. Generating these force values over and over is time consuming and has to be repeated each debugging session. Today we will learn to use a testbench to run a simulation instead.
 
 ## Using a testbench ##
-6. A testbench is a way to run a simulation without typing in tcl commands. Create a new file using the testbench below to simulate the verilog code above.
+6. A testbench is a way to run a simulation without typing in tcl commands. Create a new file by using the `+` under Source files and add a simulation source. Enter the testbench below to simulate the verilog code above.
 
 ```verilog
 
