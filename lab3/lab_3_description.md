@@ -18,9 +18,9 @@ Start the project
 5. Fill in the project name `lab2_combo` and file location.
 6. Default is rtl project, which is what you want so just click Next.
 7. Don't create a new file yet, just click Next.
-8. No constraint file yet, so just click Next again.
-9. Select the `parts` -> Category: `general purpose` -> Family: `Zynq-7000` -> `xc7z020clg484-3`.
-10. Choose `Finish`.
+8. No constraint file is needed this time, so just click Next again.
+9. Select the `Board` tab. Under `Name` find PYNQ-Z1.
+10. Select PYNQ-Z1 in table below. Make sure that the Part is xc7z020clg400-1.
 
 # Individual Designs
 
@@ -43,8 +43,13 @@ Start the project
 2. Create the 'schematic' and verify it is the correct circuit. Recall `RTL analysis` -> `Open Elaborated Design`
 3. Edit your verilog if necessary.
 4. Once your verilog and circuit are correct get screen captures for your report.
-5. Using the procedures learned in a prior lab, force values to create a timing diagram that demonstrates the circuit is functioning correctly.
-6. Create a screen capture of the timing diagram for your lab report.
+5. In a prior lab, force values were used to create a timing diagram that demonstrates the circuit is functioning correctly. Generating these force values over and over is time consuming and has to be repeated each debugging session. Today we will learn to use a testbench to run a simulation instead.
+
+## Using a testbench ##
+6. 
+
+## Simulate ##
+7. Create a screen capture of the timing diagram for your lab report.
 
 ____
 
