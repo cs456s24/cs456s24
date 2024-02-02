@@ -47,19 +47,27 @@ Start the project
 
 ## Understanding a testbench ##
 6. A testbench is a way to run a simulation without typing in tcl commands. Below is one designed to test all inputs of the `combo_eq` module you wrote above. Let's make sure you understand key aspects of the code below.
-1) 
+   
+### Timescale
 ```verilog
 `timescale 1 ns/ 1 ns
 ```
 The first unit in the timescale indicates the reference time scale units of delay and the second unit indicates the precision. We will generally just use 1 ns for both.
-2) Note the name of the module is the same as the CUT (Circuit Under Test) followed by _tb. This is not required, but is convention and highly recommended. Often all signals in the testbench are also followed by _tb, but is omitted here for simplicity. Once the timescale is set the command `#`number can be used to have the simulation delay changes for number time units.
-3)`reg a;` or "register a" becomes a variable we can set to hold a signal. Registers are needed for inputs into the instantiation of a module being tested.
-4) `wire x;` is literally a wired in a circuit. Wires are needed for outputs from the module being tested.
-5) `localparam` is used to define a constant name for more readable and maintainable code. Now when we delay the simulation for a certain number of time units, and want to change it later, we only have to change it in one place.
-6) `combo_eq combo_eq_tb(.a(a),  .b(b), .x(x));` instantiates a combo_eq module "type" that is named combo_eq-tb much like in Java you instantiate an object. In this case instead of passing parameter values to a constructor, you are connecting signals in the test module to the inputs and outputs of the circuit under test.
-7) Each assignment to a register within the initial block happens in the order given. Though "time" in the simulation does not pass until the `#` directive is used.
 
-### Note the lines before the initial begin are setting up the circuit. Those within the initial clause are for running the simulation ###
+### Circuit Under Test
+Note the name of the module is the same as the CUT (Circuit Under Test) followed by _tb. This is not required, but is convention and highly recommended. Often all signals in the testbench are also followed by _tb, but is omitted here for simplicity. Once the timescale is set the command `#`number can be used to have the simulation delay changes for number time units.
+### Registers
+`reg a;` or "register a" becomes a variable we can set to hold a signal. Registers are needed for inputs into the instantiation of a module being tested.
+### Wires
+`wire x;` is literally a wire in a circuit. Wires are needed for outputs from the module being tested.
+### Constants
+`localparam` is used to define a constant name for more readable and maintainable code. Now when we delay the simulation for a certain number of time units, and want to change it later, we only have to change it in one place.
+### Instantiating the circuit under test
+`combo_eq combo_eq_tb(.a(a),  .b(b), .x(x));` instantiates a combo_eq module "type" that is named combo_eq-tb much like in Java you instantiate an object. In this case instead of passing parameter values to a constructor, you are connecting signals in the test module to the inputs and outputs of the circuit under test.
+### Setting signgals
+Each assignment to a register within the initial block happens in the order given. Though "time" in the simulation does not pass until the `#` directive is used.
+
+**Note the lines before the initial begin are setting up the circuit. Those within the initial clause are for running the simulation**
 
 ```verilog
 `timescale 1 ns/ 1 ns
