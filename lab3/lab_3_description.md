@@ -1,12 +1,11 @@
-# Lab 2
+# Lab 3
 
-Reminder about how to create a project and begin editing a file. Note that your files should be named what we ask and you should always have your name and date in your verilog source files. This is the first step in "writing your own code" and helps me significantly as much of the grading I do is by hand. Having your name in the file makes it easier for me to get your grade into Canvas accurately (i.e. know whose code I am looking at so that when I click the rubric buttons I know I am in the right place.)
+Note that your files should be named what we ask and you should always have your name and date in your verilog source files. This is the first step in "writing your own code" and helps me significantly as much of the grading I do is by hand. Having your name in the file makes it easier for me to get your grade into Canvas accurately (i.e. know whose code I am looking at so that when I click the rubric buttons I know I am in the right place.)
 
 # Submission Details
-Today's lab will be a pdf report again submitted to Canvas. Ideally you will submit 3 designs: a straight forward circuit from a boolean logic expression, a one-bit multiplexor, and a one-bit full adder. These latter two designs were a part of the in-class exercises and homework. Today's lab will be graded as follows: 
-1. logic expression design (verilog, circuit screen capture, timing diagram screen capture): 5pts
-2. multiplexor design(verilog, circuit screen capture, timing diagram screen capture): 2.5 pts
-3. adder design(verilog, circuit screen capture, timing diagram screen capture): 2.5 pts
+Today's lab will be a pdf report again submitted to Canvas. Ideally you will submit 2 designs: a straight forward circuit from a boolean logic expression and a one-bit full adder. Today's lab will be graded as follows: 
+1. logic expression design (verilog, circuit screen capture, timing diagram screen capture): 7pts
+2. adder design(verilog, circuit screen capture, timing diagram screen capture): 3 pts
 
 It is useful to finish these designs as they are a part of later projects and labs. It may be easier to turn in the verilog as a screen capture also to maintain the legibility and formatting.
 
