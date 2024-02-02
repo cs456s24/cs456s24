@@ -45,8 +45,8 @@ Start the project
 4. Once your verilog and circuit are correct get screen captures for your report.
 5. In a prior lab, force values were used to create a timing diagram that demonstrates the circuit is functioning correctly. Generating these force values over and over is time consuming and has to be repeated each debugging session. Today we will learn to use a testbench to run a simulation instead.
 
-## Using a testbench ##
-6. A testbench is a way to run a simulation without typing in tcl commands. Create a new file by using the `+` under Source files and add a simulation source. Copy the testbench code below to simulate the verilog module above.
+## Understanding a testbench ##
+6. A testbench is a way to run a simulation without typing in tcl commands. Below is one designed to test all inputs of the `combo_eq` module you wrote above. Let's make sure you understand key aspects of the code below.
 
 ```verilog
 
@@ -83,9 +83,10 @@ module combo_eq_tb;
 endmodule
 
 ```
-
+7. Create a new file by using the `+` under Source files and add a simulation source. Copy the testbench code above designed to simulate the verilog module `combo_eq`.
+   
 ## Simulate ##
-7. Create a screen capture of the timing diagram for your lab report.
+8. Under the Flow Navigator, use `Run Simulation` to run the code in the testbench. Once you have inspected the timing diagram to verify the correct output for `x` for all possible inputs of `a` and `b`, create a screen capture of the timing diagram for your lab report.
 
 ___
 
