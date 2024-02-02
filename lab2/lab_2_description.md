@@ -8,10 +8,11 @@ Start the project
 6. Default is rtl project, which is what you want so just click Next.
 7. Don't create a new file yet, just click Next.
 8. No constraint file yet, so just click Next again.
-9. Select the `Board` tab. Under `Family` find PYNQ-Z1. Select PYNQ-Z1 in table below.
-10. Choose Finish.
+9. Select the `Board` tab. Under `Name` find PYNQ-Z1.
+10. Select PYNQ-Z1 in table below. Make sure that the Part is xc7z020clg400-1 or it may cause problems later.
+11. Choose Finish.
 
-Side note (Spring 2024): The part you chose in lab01 was not the correct part - in fact you may have ended up with some package pin not found style errors. Choosing the Board tab and PYNQ-Z1 should eliminate any of those errors.
+Side note (Spring 2024): The part you chose in lab01 was not the correct part - in fact you may have ended up with some package pin not found style errors. Choosing the Board tab and PYNQ-Z1 should eliminate any of those errors. If later you find yourself with a missing package pin error, you probably did not select the correct part at the beginning. You should be able to change to the correct part by going to `Settings` under the Project Manager, then choosing `General` under Project Settings on the left. On the right under project device you can use the '...' to change the device.
 
 # Editing file
 1. In the middle Sources window choose the plus tab.
@@ -28,7 +29,7 @@ Create an initial design by typing in the Verilog below. Note that this module i
 
 ```verilog
 // Testing the board LEDS and set up
-module board_demo_top(
+module board_demo(
     input [1:0] SWITCHES, 
     output [3:0] LEDS
 );
@@ -45,7 +46,7 @@ Make sure that your schematic makes sense.
 # Continue creating design
 Use the and gate as an example and add an or, xor, and not gate each with the same inputs, but the output should be increasing LEDS. Since the not gate has only one input, use the SWITCHES[0] only.
 
-Again check your schematic.
+Again check your schematic. If you are having trouble getting your schematic to update, right-click on Open Elaborated Design and choose Reload.
     
 # Simulation
 1. `Run simulation` -> `Run behavioral simulation`
@@ -68,7 +69,7 @@ Note that to see all of the lines individually, you may need to expand the SWITC
    
    1) The play button with a subscript "T" adds the additional runtime specified in the box immediately to its right. Specify the time to step to next wave
    2) type into tcl console
-    ```verilog
+    ```
         run 10ns
     ```
 
@@ -86,3 +87,6 @@ Note that to see all of the lines individually, you may need to expand the SWITC
 Note that you can "test" all of the outputs at once as these gates are set up in parallel. Once you are convinced you have everything working correctly, move on to the next section.
 
 # Setting up a constraints file
+
+Download the constraints file at https://github.com/cs456s24/cs456s24/tree/main/lab2 
+
