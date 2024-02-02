@@ -15,7 +15,7 @@ Start the project
 2. Start `Vivado`.
 3. Under Quick Start, choose Create Project.
 4. Hit Next to use the assist at creating projects Wizard.
-5. Fill in the project name `lab2_combo` and file location.
+5. Fill in the project name `lab3_combo` and file location.
 6. Default is rtl project, which is what you want so just click Next.
 7. Don't create a new file yet, just click Next.
 8. No constraint file is needed this time, so just click Next again.
