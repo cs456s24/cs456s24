@@ -142,7 +142,8 @@ module full_adder_tb;
     
     initial
         begin   
-// Enter your simulation here.
+
+// Enter your simulation statements here.
            
         end
     
