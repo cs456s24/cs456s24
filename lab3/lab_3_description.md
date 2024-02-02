@@ -4,7 +4,7 @@ Note that your files should be named what we ask and you should always have your
 
 # Submission Details
 Today's lab will be a pdf report again submitted to Canvas. You will submit 2 designs: a straight forward circuit from a boolean logic expression and a one-bit full adder. Today's lab will be graded as follows: 
-1. logic expression design (verilog for combo_eq, circuit screen capture, timing diagram screen capture): 6pts
+1. logic expression design (verilog for combo_eq, circuit screen capture, timing diagram screen capture): 6 pts
 2. adder design(verilog for full_adder and full_adder_tb, circuit screen capture, timing diagram screen capture): 4 pts
 
 It is useful to finish these designs as they are a part of later projects and labs. It may be easier to turn in the verilog as a screen capture also to maintain the legibility and formatting.
