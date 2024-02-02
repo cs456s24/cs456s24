@@ -46,7 +46,44 @@ Start the project
 5. In a prior lab, force values were used to create a timing diagram that demonstrates the circuit is functioning correctly. Generating these force values over and over is time consuming and has to be repeated each debugging session. Today we will learn to use a testbench to run a simulation instead.
 
 ## Using a testbench ##
-6. 
+6. A testbench is a way to run a simulation without typing in tcl commands. Create a new file using the testbench below to simulate the verilog code above.
+
+```verilog
+
+module combo_eq_tb;
+    reg a;
+    reg b;
+    wire b_out, c_out, x_out;
+    
+       
+    localparam time_step = 5;
+
+    combo_eq combo_eq_tb(.a_in(a),  .b_in(b), .x_out(x));
+    
+    initial
+        begin   
+            a = 0;
+            b = 0;
+            #time_step;
+            
+            a = 1;
+            b = 0;
+            #time_step;                 
+            
+            a = 1;
+            b = 1;
+            #time_step;
+                                
+            a = 0;
+            b = 1;
+            #time_step;
+            a = 0;
+           
+        end
+    
+endmodule
+
+```
 
 ## Simulate ##
 7. Create a screen capture of the timing diagram for your lab report.
