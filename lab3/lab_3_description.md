@@ -88,25 +88,6 @@ endmodule
 ## Simulate ##
 7. Create a screen capture of the timing diagram for your lab report.
 
-____
-
-# Multiplexor
-
-## Multiplexor behavior (2 - 1)
-
-A multiplexor is a digital circuit that can select one of `n` inputs (here `n` is `2`) and redirect that input to the output. The selection is done by the select input(`s`). To select one of several inputs, we need m select lines such that 2<sup>m</sup>=n. 
-
-For example, if there are 8 input lines, we need 3 select bits to be able to select all input lines (2<sup>3</sup>=8).
-
-In this lab, we will build a two to one multiplexor. Two inputs lines will go into the multiplexor and the output will be one of those inputs. A single bit will select which input will be reflected on the output. The two input lines should be labeled `d0` and `d1`. `d0` should be displayed on the output called `out` when the input labelled `select` is 0 and `d1` should be displayed when `select` is 1.
-
-## Write Verilog for the one-bit (2-1) multiplexor
-1. Write structural verilog for the one bit (2-1) multiplexor. Name this module `mux_2_1` and saved to `lab_2`.
-2. Create the `schematic` and verify it is the correct circuit. Recall `RTL analysis` -> `Open Elaborated Design`
-3. Edit your verilog if necessary.
-4. Once your verilog and circuit are correct get screen captures for your report.
-5. Using the procedures learned in a prior lab, force values to create a timing diagram that demonstrates the circuit is functioning correctly. Note there are 8 different possible input patters because there are three inputs. You only need to show the results for when the two inputs, `d0` and `d1`, are different.
-6. Create a screen capture of the timing diagram for your lab report.
 ___
 
 # Full Adder
@@ -118,7 +99,7 @@ A full adder circuit is the basic fundamental circuit that can perform addition 
 A one-bit full adder will take in 3 one-bit inputs: two 1-bit inputs representing the digits to add and a one 1-bit `carry_in`. The full adder will have two outputs: a 1-bit `sum` and 1-bit `carry_out` that when used in conjunction with other one-bit adders will be the `carry_in` to the next more significant bit of the addition. 
 
 ## Write Verilog for the one-bit full adder
-1. Write structural verilog for the one bit full adder. Name this module `full_adder` and saved to `lab_2`.
+1. Write structural verilog for the one bit full adder. Name this module `full_adder` and saved to `lab_3`.
 2. Create the 'schematic' and verify it is the correct circuit. Recall `RTL analysis` -> `Open Elaborated Design`
 3. Edit your verilog if necessary.
 4. Once your verilog and circuit are correct get screen captures for your report.
