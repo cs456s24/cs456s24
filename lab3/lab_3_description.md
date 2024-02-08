@@ -63,7 +63,7 @@ Note the name of the module is the same as the CUT (Circuit Under Test) followed
 ### Constants
 `localparam` is used to define a constant name for more readable and maintainable code. Now when we delay the simulation for a certain number of time units, and want to change it later, we only have to change it in one place.
 ### Instantiating the circuit under test
-`combo_eq combo_eq_tb(.a(a),  .b(b), .x(x));` instantiates a combo_eq module "type" that is named combo_eq-tb much like in Java you instantiate an object. In this case instead of passing parameter values to a constructor, you are connecting signals in the test module to the inputs and outputs of the circuit under test.
+`combo_eq combo_eq_tb(a, b, x);` instantiates a combo_eq module "type" that is named combo_eq-tb much like in Java you instantiate an object. In this case instead of passing parameter values to a constructor, you are connecting signals in the test module to the inputs and outputs of the circuit under test.
 ### Setting signals
 Each assignment to a register within the initial block happens in the order given. Though "time" in the simulation does not pass until the `#` directive is used.
 
