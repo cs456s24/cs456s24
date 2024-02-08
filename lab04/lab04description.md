@@ -13,3 +13,90 @@ The code does not have to be complete or work yet, but should represent where yo
 
 # Provided Testbench for P1
 
+```verilog
+`timescale 1 ns/ 1 ns
+
+module top_pc_tb;
+    reg b0;
+    reg s0, s1;
+    wire leds[5:0];
+          
+    localparam time_step = 10;
+
+    top_pc top_pc_tb(b0, s1, s0, leds[5:0]);
+    
+    initial
+        begin
+            // Need 8 test cases, for three inputs.
+            // Two tests each setting of switches. 
+            // Simulating a push of button 0 with switches same, models hw.
+
+            // pushing button 0, switches 00. 
+            s0 = 0;
+            s1 = 0;
+            b0 = 0;
+            #time_step;
+            
+            s0 = 0;
+            s1 = 0;
+            b0 = 1;
+            #time_step;                
+            
+            s0 = 0;
+            s1 = 0;
+            b0 = 0;
+            #time_step;
+
+            // pushing button 0, switches 01. 
+            s0 = 1;
+            s1 = 0;
+            b0 = 0;
+            #time_step;
+            
+            s0 = 1;
+            s1 = 0;
+            b0 = 1;
+            #time_step;                
+            
+            s0 = 1;
+            s1 = 0;
+            b0 = 0;
+            #time_step;
+
+            // pushing button 0, switches 10. 
+            s0 = 0;
+            s1 = 1;
+            b0 = 0;
+            #time_step;
+            
+            s0 = 0;
+            s1 = 1;
+            b0 = 1;
+            #time_step;                
+            
+            s0 = 0;
+            s1 = 1;
+            b0 = 0;
+            #time_step;
+
+            // pushing button 0, switches 11. 
+            s0 = 1;
+            s1 = 1;
+            b0 = 0;
+            #time_step;
+            
+            s0 = 1;
+            s1 = 1;
+            b0 = 1;
+            #time_step;                
+            
+            s0 = 1;
+            s1 = 1;
+            b0 = 0;
+            #time_step;
+        
+        end
+    
+endmodule
+
+```
