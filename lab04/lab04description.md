@@ -94,7 +94,7 @@ module top_pc_tb;
             s1 = 1;
             b0 = 0;
             #time_step;
-        
+            $finish();
         end
     
 endmodule
