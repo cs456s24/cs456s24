@@ -12,6 +12,10 @@ The code does not have to be complete or work yet, but should represent where yo
 2. Updated README. (3 pts)
 3. At least one commit from each team member. (4 pts - 2 each member)
 
+
+# Expected Output Table
+![p1in-out](p1input_output-table.png)
+
 # Provided Testbench for P1
 
 ```verilog
