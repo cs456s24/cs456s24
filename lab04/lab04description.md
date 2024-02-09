@@ -12,6 +12,11 @@ The code does not have to be complete or work yet, but should represent where yo
 2. Updated README. (3 pts)
 3. At least one commit from each team member. (4 pts - 2 each member)
 
+# Additional Verilog Tips
+There are three kinds of assignment. 
+1. `=` blocking (i.e. makes it sequential) use within an initial block
+2. `<=` non-blocking (i.e. parallel) avoid for now
+3. `assign` used outside of an intial or always block, needed some in this project
 
 # Expected Output Table
 ![p1in-out](p1input_output-table.png)
