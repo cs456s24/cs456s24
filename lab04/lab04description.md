@@ -29,8 +29,8 @@ There are three kinds of assignment.
 module top_pc_tb;
     reg b0;
     reg s0, s1;
-    wire leds[5:0];
-    reg test_fail;
+    wire [5:0]leds;
+    reg test_pass;
           
     localparam time_step = 10;
 
@@ -47,15 +47,15 @@ module top_pc_tb;
             s1 = 0;
             b0 = 0;
             #time_step;
-            test_fail = ~leds[5] && ~leds[4] && ~leds[3] && leds[2] && ~leds[1] && ~leds[0];
-            if (test_fail) $display("Failed test 000");
+            test_pass = ~leds[5] && ~leds[4] && ~leds[3] && leds[2] && ~leds[1] && ~leds[0];
+            if (~test_pass) $display("Failed test 000");
 
             s0 = 0;
             s1 = 0;
             b0 = 1;
             #time_step;
-            test_fail = ~leds[5] && ~leds[4] && ~leds[3] && ~leds[2] && ~leds[1] && ~leds[0];                
-            if (test_fail) $display("Failed test 001");
+            test_pass = ~leds[5] && ~leds[4] && ~leds[3] && ~leds[2] && ~leds[1] && ~leds[0];                
+            if (~test_pass) $display("Failed test 001");
 
             s0 = 0;
             s1 = 0;
@@ -68,15 +68,15 @@ module top_pc_tb;
             s1 = 0;
             b0 = 0;
             #time_step;
-            test_fail = leds[5] && ~leds[4] && leds[3] && ~leds[2] && ~leds[1] && ~leds[0];
-            if (test_fail) $display("Failed test 100");
+            test_pass = leds[5] && ~leds[4] && leds[3] && ~leds[2] && ~leds[1] && ~leds[0];
+            if (~test_pass) $display("Failed test 100");
 
             s0 = 1;
             s1 = 0;
             b0 = 1;
             #time_step;                
-            test_fail = leds[5] && ~leds[4] && ~leds[3] && leds[2] && ~leds[1] && ~leds[0];
-            if (test_fail) $display("Failed test 101");
+            test_pass = leds[5] && ~leds[4] && ~leds[3] && leds[2] && ~leds[1] && ~leds[0];
+            if (~test_pass) $display("Failed test 101");
 
             s0 = 1;
             s1 = 0;
@@ -88,15 +88,15 @@ module top_pc_tb;
             s1 = 1;
             b0 = 0;
             #time_step;
-            test_fail = ~leds[5] && ~leds[4] && ~leds[3] && leds[2] && ~leds[1] && ~leds[0];
-            if (test_fail) $display("Failed test 010");
+            test_pass = ~leds[5] && ~leds[4] && ~leds[3] && leds[2] && ~leds[1] && ~leds[0];
+            if (~test_pass) $display("Failed test 010");
 
             s0 = 0;
             s1 = 1;
             b0 = 1;
             #time_step;                
-            test_fail = leds[5] && ~leds[4] && ~leds[3] && ~leds[2] && leds[1] && ~leds[0];
-            if (test_fail) $display("Failed test 011");
+            test_pass = leds[5] && ~leds[4] && ~leds[3] && ~leds[2] && leds[1] && ~leds[0];
+            if (~test_pass) $display("Failed test 011");
 
             s0 = 0;
             s1 = 1;
@@ -108,15 +108,15 @@ module top_pc_tb;
             s1 = 1;
             b0 = 0;
             #time_step;
-            test_fail = leds[5] && ~leds[4] && leds[3] && ~leds[2] && ~leds[1] && ~leds[0];
-            if (test_fail) $display("Failed test 110");
+            test_pass = leds[5] && ~leds[4] && leds[3] && ~leds[2] && ~leds[1] && ~leds[0];
+            if (~test_pass) $display("Failed test 110");
 
             s0 = 1;
             s1 = 1;
             b0 = 1;
             #time_step;                
-            test_fail = ~leds[5] && ~leds[4] && ~leds[3] && leds[2] && leds[1] && ~leds[0];
-            if (test_fail) $display("Failed test 111");
+            test_pass = ~leds[5] && ~leds[4] && ~leds[3] && leds[2] && leds[1] && ~leds[0];
+            if (~test_pass) $display("Failed test 111");
 
             s0 = 1;
             s1 = 1;
