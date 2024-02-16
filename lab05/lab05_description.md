@@ -10,12 +10,12 @@ This top file should create the circuit shown above using the following inputs s
 that it can be programmed on the board fpga.
 
 Instead of the signal in the diagram shown on the left, use the board name on the right.
-a: SWITCHES[0]
-b: SWITCHES[1]
-Carry In: BUTTONS[1]
-Select/Operation: BUTTONS[0]
-Output: LEDS[0]
-Carry Out: LEDS[1]
+1. a: SWITCHES[0]
+2. b: SWITCHES[1]
+3. Carry In: BUTTONS[1]
+4. Select/Operation: BUTTONS[0]
+5. Output: LEDS[0]
+6. Carry Out: LEDS[1]
 
 Note that you may use busses for the input and/or output as you see fit. 
 Once you have created your circuit, you should create a testbench and simulate.
@@ -40,14 +40,9 @@ Make sure to use the Vivado IDE to add sources and make sure you have categorize
 Select the `Board` tab. Under `Name` find PYNQ-Z1.
 Select PYNQ-Z1 in table below. Make sure that the Part is xc7z020clg400-1 or it may cause problems later.
 
-    5. Force a constant value on an input line (signal)
 
-    1) Select the signal -> right click -> force constant -> force value -> 1
-   
-   ![force constant](../lab1/rightclick_force_constant.png)
 
-   ![right click](../lab1/rightclick_input_constant.png)
-
-   # Setting up a constraints file
-
+# Setting up a constraints file
+Below is the constraints file from lab2. You will need to comment out the lines not 
+being used and uncomment those being used in this project.
 Download the constraints file at https://github.com/cs456s24/cs456s24/tree/main/lab2 
