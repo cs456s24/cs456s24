@@ -1,5 +1,8 @@
 # Project creation
-Start the project
+Today you will start a new project that will be the one-bit alu as shown in the diagram below.
+
+![one-bit_alu](../lab05/one-bit_alu.png)
+
 1. Use the Windows key to bring up the search bar for Vivado.
 2. Start Vivado.
 3. Under Quick Start, choose Create Project.
