@@ -7,7 +7,11 @@ verilog a designer can inadvertently create latches changing the intended design
 
 ## Submission
 Submit a pdf with the following schematics and related timing diagrams as well as answering the questions indicated
-in the lab.
+in the lab. More specifically:
+1) schematic and timing diagram for nonblocking assignment in Running an experiment
+2) schematic and timing diagram for blocking assignment in Running an experiment
+3) answer question: What is the difference between the two schematics? Would you have expected this from the Verilog?
+4) 
 
 ## Assignment in Verilog
 There are three versions of assignment symbols/uses in Verilog.
@@ -103,4 +107,33 @@ module nonblocking_tb;
 endmodule
 
 ```
-Then change the always @ sensitivity list to only include `in` and use the `=` blocking assignment. Create a testbench that no longer uses the clock and instead, just cycles a. See how this is different in terms of the schematic and the timing diagram.
+Then change the always @ sensitivity list to only include `in` and use the `=` blocking assignment. Create a testbench that no longer uses the clock and instead, just cycles a. See how this is different in terms of the schematic and the timing diagram and explain that difference in your write-up for the lab briefly.
+
+## Multiplexors with if-else
+Note that a multiplexor is a combinational circuit. To specify one in behavioral verilog the simplest way is to use an if-else statement or a case statement. It is easy to introduce a latch 
+unintentionally using these constructs by not assigning a value to a register for every possible 
+condition, similar to way is done in the code below. Use the code below to create a schematic in 
+Vivado. 
+
+```verilog
+module simple_mux(input [1:0] x, output reg y);
+    always @(*) begin
+        if (x == 2'b10) begin
+            y = 2'd3;
+        end else if(x == 2'b11) begin
+            y = 2'd2;
+        end
+    end
+endmodule
+```
+Capture that schematic and then change the code to make sure all possibilities of `x` are included
+in the always block by including a default value. Capture this second schematic. Explain in the write-up what you did to remove the latch.
+
+Note that in addition to using case or if-else statements, a ternary operator also exists that
+can be used to specify a multiplexor. For example, here is an expression that implements min(a, 10) 
+`assign out = a > 10 ? 10 : a;` a one-bit multiplexor with inputs `a` and `b` and select `s` would
+be `assign out = s == 0 ? a : b;`
+
+Finally, there are verilog control constructs that cannot be synthesized. Specifically, for and while 
+loops cannot be mapped to hardware. Rather they are used to be able to specify multiple instantiations 
+of modules or in a testbench to loop through a series of tests.
