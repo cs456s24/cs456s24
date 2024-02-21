@@ -11,7 +11,7 @@ in the lab. More specifically:
 1) schematic and timing diagram for nonblocking assignment in Running an experiment
 2) schematic and timing diagram for blocking assignment in Running an experiment
 3) answer question: What is the difference between the two schematics? Would you have expected this from the Verilog?
-4) 
+4) two schematics from section on multiplexors with if-else
 
 ## Assignment in Verilog
 There are three versions of assignment symbols/uses in Verilog.
