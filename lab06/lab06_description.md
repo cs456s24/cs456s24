@@ -137,3 +137,7 @@ be `assign out = s == 0 ? a : b;`
 Finally, there are verilog control constructs that cannot be synthesized. Specifically, for and while 
 loops cannot be mapped to hardware. Rather they are used to be able to specify multiple instantiations 
 of modules or in a testbench to loop through a series of tests.
+
+## If extra time
+Implement the multiplexors in the activity from Wednesday using the code in the last model so
+you can see what actually gets built.
