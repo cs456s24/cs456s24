@@ -34,3 +34,59 @@ specifically changed by another `=` assignment.
 `<=` within an always block is a `non-blocking` assignment. It is used to specify a sequential circuit and the 
 sensitivity list should designate an edge of the clock. With non-blocking assignment all of the right hand sides
 of the assignment statements are evaluated and then immediately assigned to the left hand side in parallel.
+
+## Running an experiment
+Use the verilog code and testbench start below to run an experiment. First use the code below using blocking assignment.
+View and capture the schematic and use the testbench to create a timing diagram to show the basic functionality.
+
+```verilog
+module nonblocking (
+    input in, clk,
+    output reg out
+    );
+          
+    reg q1, q2;
+    always @posedge clk) begin
+      q1 <= in;
+      q2 <= q1;
+      out <= q2;
+    end
+endmodule
+
+```
+```verilog
+`timescale 1 ns/ 1 ns
+
+module combo_eq_tb;
+    reg a;
+    reg b;
+    wire x;
+          
+    localparam time_step = 5;
+
+    combo_eq combo_eq_tb(a, b, x);
+    
+    initial
+        begin   
+            a = 0;
+            b = 0;
+            #time_step;
+            
+            a = 1;
+            b = 0;
+            #time_step;                 
+            
+            a = 1;
+            b = 1;
+            #time_step;
+                                
+            a = 0;
+            b = 1;
+            #time_step;
+           
+        end
+    
+endmodule
+
+```
+Then change the always @ sensitivity list to use the posedgand the `=` blocking assignment to `<=` non-blocking assignment.
