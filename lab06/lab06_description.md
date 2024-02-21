@@ -112,7 +112,7 @@ Then change the always @ sensitivity list to only include `in` and use the `=` b
 ## Multiplexors with if-else
 Note that a multiplexor is a combinational circuit. To specify one in behavioral verilog the simplest way is to use an if-else statement or a case statement. It is easy to introduce a latch 
 unintentionally using these constructs by not assigning a value to a register for every possible 
-condition, similar to way is done in the code below. Use the code below to create a schematic in 
+condition, similar to what is done in the code below. Use the code below to create a schematic in 
 Vivado. 
 
 ```verilog
@@ -134,7 +134,7 @@ can be used to specify a multiplexor. For example, here is an expression that im
 `assign out = a > 10 ? 10 : a;` a one-bit multiplexor with inputs `a` and `b` and select `s` would
 be `assign out = s == 0 ? a : b;`
 
-Finally, there are verilog control constructs that cannot be synthesized. Specifically, for and while 
+Finally, there are verilog control constructs that cannot be synthesized. Specifically, `for` and `while` 
 loops cannot be mapped to hardware. Rather they are used to be able to specify multiple instantiations 
 of modules or in a testbench to loop through a series of tests.
 
