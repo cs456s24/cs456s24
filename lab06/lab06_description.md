@@ -15,9 +15,9 @@ in the lab. More specifically:
 
 ## Assignment in Verilog
 There are three versions of assignment symbols/uses in Verilog.
-1. assign = outside of an always @ block
-2. = within an always @ or initial begin block
-3. <= usually used within an always @ block
+1. `assign {netname} =` outside of an always @ block
+2. `=` within an always @ or initial begin block
+3. `<=` usually used within an always @ block
 
 ### assign =
 `assign =` is used outside of an always @ or initial block to create a `continuous assignment` of the right hand
