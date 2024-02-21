@@ -36,7 +36,7 @@ sensitivity list should designate an edge of the clock. With non-blocking assign
 of the assignment statements are evaluated and then immediately assigned to the left hand side in parallel.
 
 ## Running an experiment
-Use the verilog code and testbench start below to run an experiment. First use the code below using blocking assignment.
+Use the verilog code and testbench start below to run an experiment. First use the code below using a non-blocking assignment.
 View and capture the schematic and use the testbench to create a timing diagram to show the basic functionality.
 
 ```verilog
@@ -46,7 +46,7 @@ module nonblocking (
     );
           
     reg q1, q2;
-    always @posedge clk) begin
+    always @(posedge clk) begin
       q1 <= in;
       q2 <= q1;
       out <= q2;
@@ -57,36 +57,50 @@ endmodule
 ```verilog
 `timescale 1 ns/ 1 ns
 
-module combo_eq_tb;
-    reg a;
-    reg b;
-    wire x;
-          
-    localparam time_step = 5;
-
-    combo_eq combo_eq_tb(a, b, x);
+module nonblocking_tb;
+    reg a, clock;
+    wire out;
+    
+       
+    localparam time_step = 10;
+    nonblocking nonblocking_tb(a, clock, out);
     
     initial
-        begin   
+        begin           
+            clock = 0;
             a = 0;
-            b = 0;
             #time_step;
             
+            clock = 1;
             a = 1;
-            b = 0;
-            #time_step;                 
-            
-            a = 1;
-            b = 1;
             #time_step;
-                                
+                      
+            clock = 0;
+            a = 1;
+            #time_step;
+                                              
+            clock = 1;
             a = 0;
-            b = 1;
             #time_step;
-           
+                        
+            clock = 0;
+            a = 0;
+            #time_step;
+                 
+            clock = 1;
+            a = 1;
+            #time_step;
+                       
+            clock = 0;
+            a = 0;
+            #time_step;
+                 
+            clock = 1;
+            a = 1;
+            #time_step;          
         end
     
 endmodule
 
 ```
-Then change the always @ sensitivity list to use the posedgand the `=` blocking assignment to `<=` non-blocking assignment.
+Then change the always @ sensitivity list to only include `in` and use the `=` blocking assignment. Create a testbench that no longer uses the clock and instead, just cycles a. See how this is different in terms of the schematic and the timing diagram.
