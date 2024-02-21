@@ -107,7 +107,7 @@ module nonblocking_tb;
 endmodule
 
 ```
-Then change the always @ sensitivity list to only include `in` and use the `=` blocking assignment. Create a testbench that no longer uses the clock and instead, just cycles a. See how this is different in terms of the schematic and the timing diagram and explain that difference in your write-up for the lab briefly.
+Then change the always @ sensitivity list to only include `in` and use the `=` blocking assignment. Create a testbench that no longer uses the clock and instead, just cycles `a`. See how this is different in terms of the schematic and the timing diagram and explain that difference in your write-up for the lab briefly.
 
 ## Multiplexors with if-else
 Note that a multiplexor is a combinational circuit. To specify one in behavioral verilog the simplest way is to use an if-else statement or a case statement. It is easy to introduce a latch 
