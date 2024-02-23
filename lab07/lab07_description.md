@@ -20,6 +20,7 @@ the assignment, the date, acknowledgment of any sources and the honor code`
 2. Github appears to remove the indentation, but include whitespace (blank lines) for readability as appropriate.
 3. Watch your page alignment in your pdf for your write-up and make sure your figure titles are consistently above or below the figure as well as the title being on the same page as the figure.
 4. For write-ups please also include items outlined in 1 above on the first page.
+5. Also in write-ups, explanations should be related to a figure and there should be more than an explanation of just the top schematic.
 
 # Provided Testbench for P2
 
