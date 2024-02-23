@@ -13,6 +13,12 @@ The code does not have to be complete or work yet, but should represent where yo
 2. Updated README. (3 pts)
 3. At least one commit from each team member. (4 pts - 2 each member)
 
+# Hints based on beginning to grade P1
+1. Make sure and include not only your names, but other information about the file and its project in the header comments. From the specification:
+   `reasonable comments including header comments for each file that include your names,
+the assignment, the date, acknowledgment of any sources and the honor code`
+2. Github appears to remove the indentation, but include whitespace (blank lines) for readability as appropriate.
+
 # Provided Testbench for P2
 
 ```verilog
