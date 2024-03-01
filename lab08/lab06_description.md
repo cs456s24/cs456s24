@@ -48,13 +48,13 @@ Your asynchronous ROM should be deep enough to hold both programs so that they s
 wide enough to hold an instruction. To be specific lets make a 0x70 byte deep and 4 byte (32-bit) wide ROM.
 Addresses without an instruction should return 0.
 
-Program 1: Located at 0x0.
+### Program 1: Located at 0x0.
 ``` verilog
     addi t0, zero, 42
     addi t1, zero, 33
     add t2, t0, t1
 ```
-Program 2: Located at 0x40
+### Program 2: Located at 0x40
 ```verilog
     add a0, zero, zero
     addi a1, a0, 4
