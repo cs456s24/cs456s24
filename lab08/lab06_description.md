@@ -6,6 +6,8 @@ store data as you desire.  Every address should contain the same amount of data 
 addresses is called the depth of the memory, while the number of bits stored per address is called the 
 width of the memory.
 
+The assignment today is to create an asynchronous ROM containing the machine code of two different RISC-V programs.
+
 ## Submission
 Submit a pdf with the following: 
 1) the verilog for your asynchronous ROM
@@ -36,3 +38,37 @@ module rom (input [2:0] address, output reg [11:0] data);
   end
 endmodule
 ```
+## An asynchronous ROM with two programs
+
+As described above, this assignment is to create an asynchronous ROM containing the machine code of two
+different RISC-V programs. Below are two RISC-V programs. Each one should be converted to machine code and 
+then hard-coded into your asynchronous ROM.
+
+Your asynchronous ROM should be deep enough to hold both programs so that they start on an even address and
+wide enough to hold an instruction. To be specific lets make a 0x70 byte deep and 4 byte (32-bit) wide ROM.
+Addresses without an instruction should return 0.
+
+Program 1: Located at 0x0.
+''' verilog
+    addi t0, zero, 42
+    addi t1, zero, 33
+    add t2, t0, t1
+'''
+Program 2: Located at 0x40
+'''verilog
+    add a0, zero, zero
+    addi a1, a0, 4
+    lw t0, 0(a0)
+    lw t1, 0(a1)
+    add t2, t1, t0
+    andi t3, t2, 0xF0F
+    ori t4, t1, 0x0F0
+    beq t2, t3, end
+    add t4, t4, t0
+end:sw t4, 4(a1)
+'''
+
+## Hint: Use Venus to determine the machine code
+Note that the beq instruction in program 2 will be dependent on the address of the instruction and
+the address that is the destination of the branch. You may need to do some computation for how to
+change that translation, but Venus should help you to determine the machine code for each address.
