@@ -62,7 +62,7 @@ Addresses without an instruction should return 0.
     lw t0, 0(a0)
     lw t1, 0(a1)
     add t2, t1, t0
-    andi t3, t2, 0xF0F
+    andi t3, t2, 0xF0
     ori t4, t1, 0x0F0
     beq t2, t3, end
     add t4, t4, t0
