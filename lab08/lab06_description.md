@@ -46,7 +46,7 @@ then hard-coded into your asynchronous ROM. Then create a testbench to make sure
 as expected.
 
 Your asynchronous ROM should be deep enough to hold both programs so that they start on an even address and
-wide enough to hold an instruction. To be specific lets make a 0x70 byte deep and 4 byte (32-bit) wide ROM.
+wide enough to hold an instruction. To be specific lets make a 0x70 byte deep (or larger) and 4 byte (32-bit) wide ROM.
 Addresses without an instruction should return 0.
 
 ### Program 1: Located at 0x0.
