@@ -13,7 +13,7 @@ Submit a pdf with the following:
 1) the verilog for your asynchronous ROM
 2) the testbench you are using to create a timing diagram
 3) schematic for your asynchronouse ROM for the program indicated below
-4) a timing diagram for two accesses to the ROM, showing the correct output
+4) a timing diagram for two accesses to the ROM, one from each program, showing the correct output
 
 ## A small example
 The synthesizer takes the Verilog you write and converts it into a low-level netlist of the structures 
@@ -42,7 +42,8 @@ endmodule
 
 As described above, this assignment is to create an asynchronous ROM containing the machine code of two
 different RISC-V programs. Below are two RISC-V programs. Each one should be converted to machine code and 
-then hard-coded into your asynchronous ROM.
+then hard-coded into your asynchronous ROM. Then create a testbench to make sure that the ROM is working 
+as expected.
 
 Your asynchronous ROM should be deep enough to hold both programs so that they start on an even address and
 wide enough to hold an instruction. To be specific lets make a 0x70 byte deep and 4 byte (32-bit) wide ROM.
