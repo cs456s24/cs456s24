@@ -49,13 +49,13 @@ wide enough to hold an instruction. To be specific lets make a 0x70 byte deep an
 Addresses without an instruction should return 0.
 
 Program 1: Located at 0x0.
-''' verilog
+``` verilog
     addi t0, zero, 42
     addi t1, zero, 33
     add t2, t0, t1
-'''
+```
 Program 2: Located at 0x40
-'''verilog
+```verilog
     add a0, zero, zero
     addi a1, a0, 4
     lw t0, 0(a0)
@@ -66,7 +66,7 @@ Program 2: Located at 0x40
     beq t2, t3, end
     add t4, t4, t0
 end:sw t4, 4(a1)
-'''
+```
 
 ## Hint: Use Venus to determine the machine code
 Note that the beq instruction in program 2 will be dependent on the address of the instruction and
