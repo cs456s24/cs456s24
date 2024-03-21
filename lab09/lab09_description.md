@@ -18,7 +18,11 @@ Submit a pdf with the following:
 3) schematic for your synchronous RAM
 4) a timing diagram for a read, write, read to the RAM, showing the correct output
 
-## A Beginning Verilog Module
+## A Data Memory Circuit Design
+
+![DataMemory](../lab09/DataMemory.png)
+
+## A Data Memory Verilog Module
 Note that a RAM is most easily organized as a two-dimensional net to make indexing easier. 
 
 Syntax: `reg [M:0] <netname> [N:0]`
