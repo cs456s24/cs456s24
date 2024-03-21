@@ -34,10 +34,9 @@ The above creates a net called `<netname>` and describes it as an array of (N+1)
 each element is a (M+1) bit number.
 
 Example:
-
- +`reg [31:0] ram [255:0];`  // A memory structure that has 256 32-bit elements.
- +`ram[2]` // The full 3rd 32-bit element
- +`ram[5][7:0]` // The lowest byte of the 6th 32-bit element
+ 1) `reg [31:0] ram [255:0];`  // A memory structure that has 256 32-bit elements.
+ 2) `ram[2]` // The full 3rd 32-bit element
+ 3) `ram[5][7:0]` // The lowest byte of the 6th 32-bit element
 
 You should use the verilog module definition below to design your RAM. Look at the hints below to remind
 you of when to use registers versus wires.
